@@ -1,0 +1,416 @@
+:root {
+  --bg: #07080d;
+  --bg2: #101522;
+  --card: rgba(255,255,255,.075);
+  --card2: rgba(255,255,255,.12);
+  --line: rgba(255,255,255,.14);
+  --text: #f7f2e8;
+  --muted: #aaa49a;
+  --accent: #c8ff00;
+  --accent2: #8d5cff;
+  --accent3: #00d6ff;
+  --paper: #f8f1e3;
+  --ink: #171717;
+  --shadow: 0 28px 90px rgba(0,0,0,.42);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 0 0, rgba(141,92,255,.30), transparent 30%),
+    radial-gradient(circle at 100% 10%, rgba(0,214,255,.20), transparent 28%),
+    linear-gradient(135deg, var(--bg) 0%, var(--bg2) 55%, #07080d 100%);
+  line-height: 1.6;
+}
+
+body:not(.menu-body)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(circle at 65% 25%, #000 0%, transparent 70%);
+}
+
+/* 왼쪽 프레임 메뉴 */
+.menu-body {
+  min-height: 100vh;
+  padding: 22px 16px 26px;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 0 0, rgba(200,255,0,.18), transparent 34%),
+    linear-gradient(180deg, #07080d 0%, #101522 62%, #07080d 100%);
+  border-right: 1px solid rgba(255,255,255,.20);
+  overflow-x: hidden;
+}
+.menu-body::before {
+  content: "";
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 330px;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.85), transparent 94%);
+}
+.menu-title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 22px;
+  padding: 20px 18px 22px;
+  font-size: 32px;
+  line-height: 1.04;
+  letter-spacing: -1.4px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: rgba(255,255,255,.065);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(15px);
+}
+.menu-title::before {
+  content: "HTML TAG TABLE";
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: .16em;
+  font-weight: 900;
+}
+.menu-title::after {
+  content: "왼쪽 메뉴를 선택하면 오른쪽 프레임에 설명이 열립니다.";
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.menu-list {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  counter-reset: menuCount;
+}
+.menu-list a {
+  counter-increment: menuCount;
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  align-items: center;
+  gap: 10px;
+  min-height: 47px;
+  margin: 0 0 8px;
+  padding: 8px 10px;
+  color: rgba(247,242,232,.92);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.34;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 18px;
+  background: rgba(255,255,255,.045);
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.menu-list a::before {
+  content: counter(menuCount, decimal-leading-zero);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #0d0f12;
+  background: linear-gradient(135deg, var(--accent), #fff6a6);
+  font-size: 12px;
+  font-weight: 950;
+}
+.menu-list a:hover,
+.menu-list a.first {
+  transform: translateX(5px);
+  background: rgba(200,255,0,.14);
+  border-color: rgba(200,255,0,.44);
+  box-shadow: 0 14px 34px rgba(200,255,0,.08);
+  color: #fff;
+}
+.menu-list a.profile-link {
+  margin-top: 14px;
+  border-color: rgba(141,92,255,.34);
+  background: linear-gradient(135deg, rgba(141,92,255,.22), rgba(0,214,255,.08));
+  color: #fff !important;
+}
+.menu-list a.profile-link::before {
+  content: "ME";
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent2), var(--accent3));
+}
+
+/* 오른쪽 설명 페이지 */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 34px 40px 52px;
+}
+.page h1 {
+  margin: 0 0 18px;
+  text-align: left;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: .94;
+  letter-spacing: -3px;
+  color: var(--text);
+}
+.page h1::before {
+  content: "HTML TAG LESSON";
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: .18em;
+  font-weight: 950;
+}
+.summary {
+  margin: 0 0 22px;
+  padding: 22px 24px;
+  color: rgba(247,242,232,.88);
+  background: linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.052));
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  font-size: 16px;
+}
+.summary strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-size: 21px;
+  letter-spacing: -.3px;
+}
+
+table.tag-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 0 22px;
+  table-layout: fixed;
+  overflow: hidden;
+  color: var(--text);
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+table.tag-table th,
+table.tag-table td {
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.11);
+  padding: 16px 18px;
+  vertical-align: top;
+  font-size: 14.5px;
+  word-break: keep-all;
+}
+table.tag-table tr:last-child td { border-bottom: 0; }
+table.tag-table th {
+  color: rgba(247,242,232,.68);
+  background: rgba(255,255,255,.065);
+  text-align: left;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+table.tag-table td:nth-child(1),
+table.tag-table td:nth-child(2) {
+  font-family: Consolas, "Courier New", monospace;
+  color: #151515;
+  font-weight: 800;
+}
+table.tag-table td:nth-child(1) { width: 22%; }
+table.tag-table td:nth-child(2) { width: 34%; }
+table.tag-table td:nth-child(3) { width: 44%; color: rgba(247,242,232,.90); }
+table.tag-table td:nth-child(1),
+table.tag-table td:nth-child(2) {
+  background: linear-gradient(135deg, rgba(200,255,0,.92), rgba(255,246,166,.92));
+  border-bottom-color: rgba(0,0,0,.12);
+}
+.example-box {
+  margin-top: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255,255,255,.07);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+.example-box h2 {
+  margin: 0;
+  padding: 17px 22px;
+  color: #fff;
+  font-size: 17px;
+  background: rgba(255,255,255,.065);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+pre {
+  margin: 0;
+  padding: 22px;
+  white-space: pre-wrap;
+  color: #eae6dc;
+  background: #05070b;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.note {
+  margin-top: 20px;
+  padding: 20px 22px;
+  color: rgba(247,242,232,.84);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  background: rgba(255,255,255,.055);
+  font-size: 14.5px;
+}
+.note strong { color: var(--accent); }
+.special-list {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+/* 제작자 소개 페이지 */
+.profile-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 34px 40px 52px;
+}
+.profile-wrap > h1 {
+  margin: 0 0 24px;
+  color: var(--text);
+  text-align: left;
+  font-size: clamp(46px, 6vw, 76px);
+  line-height: .95;
+  letter-spacing: -3px;
+}
+.profile-wrap > h1::before {
+  content: "CREATOR PROFILE";
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: .18em;
+  font-weight: 950;
+}
+.profile-card {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 0;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.052));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+.profile-photo-cell,
+.profile-info-cell {
+  display: block;
+  padding: 28px;
+  border: 0;
+  vertical-align: top;
+}
+.profile-photo-cell {
+  width: auto;
+  text-align: center;
+  background: radial-gradient(circle at 30% 20%, rgba(200,255,0,.18), transparent 42%), rgba(255,255,255,.04);
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+.profile-photo-box {
+  width: 230px;
+  height: 280px;
+  margin: 0 auto 18px;
+  padding: 8px;
+  border: 0;
+  border-radius: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent3), var(--accent2));
+  box-shadow: 0 30px 90px rgba(0,214,255,.22);
+  overflow: hidden;
+}
+.profile-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+.profile-name {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -1.8px;
+}
+.profile-nickname {
+  margin: 0 0 20px;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 950;
+}
+.profile-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+}
+.profile-table th,
+.profile-table td {
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  padding: 15px 16px;
+  font-size: 15px;
+}
+.profile-table tr:last-child th,
+.profile-table tr:last-child td { border-bottom: 0; }
+.profile-table th {
+  width: 140px;
+  color: #141414;
+  background: var(--accent);
+  text-align: center;
+  font-weight: 950;
+}
+.profile-table td {
+  color: rgba(247,242,232,.92);
+  background: rgba(255,255,255,.045);
+}
+.profile-point-list {
+  margin: 16px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 15px;
+}
+.profile-point-list li { margin-bottom: 6px; }
+
+@media (max-width: 850px) {
+  .page, .profile-wrap { padding: 26px 20px 36px; }
+  .page h1, .profile-wrap > h1 { font-size: 42px; letter-spacing: -1.7px; }
+  table.tag-table { table-layout: auto; }
+  table.tag-table th, table.tag-table td { font-size: 13.5px; padding: 12px; }
+  .profile-card { grid-template-columns: 1fr; }
+  .profile-photo-cell { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+}

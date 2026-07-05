@@ -1,0 +1,107 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Malgun Gothic", "맑은 고딕", Arial, sans-serif;
+  color: #202020;
+  background: #ffffff;
+  line-height: 1.5;
+}
+.menu-body {
+  padding: 12px 10px;
+  border-right: 2px dashed #222;
+  min-height: 100vh;
+  background: #fff;
+}
+.menu-title {
+  margin: 0 0 12px 0;
+  font-size: 19px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+}
+.menu-list { margin: 0; padding: 0; }
+.menu-list a {
+  display: block;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 5px 6px;
+  margin-bottom: 3px;
+  border-radius: 4px;
+}
+.menu-list a::before { content: "*"; margin-right: 2px; }
+.menu-list a:hover {
+  background: #eeeeee;
+  color: #c00000;
+}
+.menu-list a.first { color: #e00000; text-decoration: underline; }
+.page {
+  padding: 14px 24px 35px 24px;
+}
+.page h1 {
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-size: 30px;
+  color: #111;
+}
+.summary {
+  margin: 6px 0 16px 0;
+  padding: 10px 14px;
+  background: #f6f6f6;
+  border-left: 6px solid #333;
+  font-size: 15px;
+}
+table.tag-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 18px 0;
+  table-layout: fixed;
+  background: #fff;
+}
+table.tag-table th, table.tag-table td {
+  border: 1px solid #555;
+  padding: 8px 9px;
+  vertical-align: top;
+  font-size: 14px;
+  word-break: keep-all;
+}
+table.tag-table th {
+  background: #d9d9d9;
+  text-align: center;
+  font-weight: 700;
+}
+table.tag-table td:nth-child(1) { width: 20%; font-family: Consolas, monospace; color: #333; }
+table.tag-table td:nth-child(2) { width: 34%; font-family: Consolas, monospace; color: #333; }
+table.tag-table td:nth-child(3) { width: 46%; }
+.example-box {
+  margin-top: 12px;
+  border: 1px solid #777;
+  background: #fafafa;
+}
+.example-box h2 {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 17px;
+  background: #e7e7e7;
+  border-bottom: 1px solid #777;
+}
+pre {
+  margin: 0;
+  padding: 12px;
+  white-space: pre-wrap;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.note {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px dashed #999;
+  background: #fffdf0;
+  font-size: 14px;
+}
+.special-list {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+  font-size: 14px;
+}

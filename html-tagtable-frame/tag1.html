@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>tag1.html - 문서의 기본 구조를 나타내 주는 태그</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+  <div class="page">
+    <h1>tag1.html</h1>
+    <div class="summary"><strong>문서의 기본 구조를 나타내 주는 태그</strong><br>HTML 문서를 만들 때 가장 먼저 이해해야 하는 기본 구조 태그입니다. 문서 전체, 머리말 영역, 본문 영역, 제목 영역을 구분합니다.</div>
+
+    <table class="tag-table">
+      <tr>
+        <th>형식</th>
+        <th>구성</th>
+        <th>내용</th>
+      </tr>
+      <tr>
+        <td>&lt;!DOCTYPE html&gt;</td>
+        <td>&lt;!DOCTYPE html&gt;</td>
+        <td>HTML 문서의 형식을 브라우저에게 알려 줍니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;html&gt;</td>
+        <td>&lt;html&gt; ... &lt;/html&gt;</td>
+        <td>HTML 문서 전체를 감싸는 최상위 태그입니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;head&gt;</td>
+        <td>&lt;head&gt; ... &lt;/head&gt;</td>
+        <td>문서 정보, 제목, 문자 인코딩, 스타일 연결 등을 작성하는 부분입니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;title&gt;</td>
+        <td>&lt;title&gt;문서 제목&lt;/title&gt;</td>
+        <td>브라우저 탭에 나타나는 제목을 지정합니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;meta&gt;</td>
+        <td>&lt;meta charset=&quot;UTF-8&quot;&gt;</td>
+        <td>문자 인코딩, 설명, 키워드 등 문서 정보를 설정합니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;body&gt;</td>
+        <td>&lt;body&gt; ... &lt;/body&gt;</td>
+        <td>화면에 실제로 보이는 내용을 작성하는 부분입니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;h1&gt;~&lt;h6&gt;</td>
+        <td>&lt;h1&gt;제목&lt;/h1&gt;</td>
+        <td>제목을 표시합니다. h1이 가장 크고 h6이 가장 작습니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;!-- --&gt;</td>
+        <td>&lt;!-- 주석내용 --&gt;</td>
+        <td>브라우저에는 보이지 않는 설명을 작성할 때 사용합니다.</td>
+      </tr>
+    </table>
+
+    <div class="example-box">
+      <h2>예제 코드</h2>
+      <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ko&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;나의 첫 HTML 문서&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;태그표 홈페이지&lt;/h1&gt;
+  &lt;!-- 이 부분은 화면에 보이지 않는 주석입니다. --&gt;
+  &lt;p&gt;HTML 기본 구조를 연습합니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+    <div class="note"><strong>참고:</strong> HTML 태그를 설명하려면 <, > 문자를 그대로 쓰면 태그로 인식될 수 있습니다. 화면에 문자로 보이게 하려면 &amp;lt;, &amp;gt;, &amp;amp;, &amp;quot;, &amp;nbsp; 같은 특수문자 표기법을 사용합니다.</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>tag18.html - 창 만들기 태그</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+  <div class="page">
+    <h1>tag18.html</h1>
+    <div class="summary"><strong>창 만들기 태그</strong><br>하나의 브라우저 화면을 여러 영역으로 나누거나, 페이지 안에 다른 페이지를 넣는 태그입니다.</div>
+
+    <table class="tag-table">
+      <tr>
+        <th>형식</th>
+        <th>구성</th>
+        <th>내용</th>
+      </tr>
+      <tr>
+        <td>&lt;frameset&gt;</td>
+        <td>&lt;frameset cols=&quot;280,*&quot;&gt; ... &lt;/frameset&gt;</td>
+        <td>브라우저 화면을 여러 프레임으로 나눕니다. 이번 과제의 tagtable.html에서 사용합니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;frame&gt;</td>
+        <td>&lt;frame src=&quot;menu.html&quot; name=&quot;menu&quot;&gt;</td>
+        <td>frameset 안에 들어갈 각각의 프레임을 지정합니다.</td>
+      </tr>
+      <tr>
+        <td>name</td>
+        <td>name=&quot;main&quot;</td>
+        <td>링크의 target과 연결할 프레임 이름을 정합니다.</td>
+      </tr>
+      <tr>
+        <td>target</td>
+        <td>&lt;a href=&quot;tag1.html&quot; target=&quot;main&quot;&gt;</td>
+        <td>링크 결과를 어느 프레임에 보여 줄지 지정합니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;noframes&gt;</td>
+        <td>&lt;noframes&gt;안내문&lt;/noframes&gt;</td>
+        <td>프레임을 지원하지 않는 브라우저를 위한 내용을 작성합니다.</td>
+      </tr>
+      <tr>
+        <td>&lt;iframe&gt;</td>
+        <td>&lt;iframe src=&quot;page.html&quot;&gt;&lt;/iframe&gt;</td>
+        <td>현재 문서 안에 다른 문서를 작은 창처럼 삽입합니다.</td>
+      </tr>
+    </table>
+
+    <div class="example-box">
+      <h2>예제 코드</h2>
+      <pre>&lt;!-- tagtable.html 예시 --&gt;
+&lt;frameset cols=&quot;280,*&quot;&gt;
+  &lt;frame src=&quot;menu.html&quot; name=&quot;menu&quot;&gt;
+  &lt;frame src=&quot;tag1.html&quot; name=&quot;main&quot;&gt;
+&lt;/frameset&gt;
+
+&lt;!-- menu.html 링크 예시 --&gt;
+&lt;a href=&quot;tag2.html&quot; target=&quot;main&quot;&gt;문단 태그&lt;/a&gt;</pre>
+    </div>
+    <div class="note"><strong>참고:</strong> frameset/frame 태그는 현재 HTML5에서는 권장되지 않지만, 이 과제 조건처럼 프레임 구조를 연습할 때 사용할 수 있습니다.</div>
+  </div>
+</body>
+</html>

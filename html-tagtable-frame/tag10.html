@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>tag10.html - 배경 이미지 작업하기</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+  <div class="page">
+    <h1>tag10.html</h1>
+    <div class="summary"><strong>배경 이미지 작업하기</strong><br>웹페이지 전체 또는 특정 영역에 배경 이미지와 배경색을 넣는 방법입니다.</div>
+
+    <table class="tag-table">
+      <tr>
+        <th>형식</th>
+        <th>구성</th>
+        <th>내용</th>
+      </tr>
+      <tr>
+        <td>background</td>
+        <td>&lt;body background=&quot;bg.jpg&quot;&gt;</td>
+        <td>문서 전체 배경 이미지를 지정하는 과거 방식입니다.</td>
+      </tr>
+      <tr>
+        <td>bgcolor</td>
+        <td>&lt;body bgcolor=&quot;#eeeeee&quot;&gt;</td>
+        <td>문서 배경색을 지정합니다.</td>
+      </tr>
+      <tr>
+        <td>background-image</td>
+        <td>style=&quot;background-image:url(bg.jpg)&quot;</td>
+        <td>CSS로 배경 이미지를 지정합니다.</td>
+      </tr>
+      <tr>
+        <td>background-repeat</td>
+        <td>style=&quot;background-repeat:no-repeat&quot;</td>
+        <td>배경 이미지 반복 여부를 지정합니다.</td>
+      </tr>
+      <tr>
+        <td>background-position</td>
+        <td>style=&quot;background-position:center&quot;</td>
+        <td>배경 이미지 위치를 지정합니다.</td>
+      </tr>
+      <tr>
+        <td>background-size</td>
+        <td>style=&quot;background-size:cover&quot;</td>
+        <td>배경 이미지 크기를 조절합니다.</td>
+      </tr>
+    </table>
+
+    <div class="example-box">
+      <h2>예제 코드</h2>
+      <pre>&lt;body background=&quot;bg.jpg&quot;&gt;
+  배경 이미지가 들어간 문서입니다.
+&lt;/body&gt;
+
+&lt;div style=&quot;background-image:url(bg.jpg); background-repeat:no-repeat; background-size:cover;&quot;&gt;
+  CSS 배경 이미지 영역
+&lt;/div&gt;</pre>
+    </div>
+  </div>
+</body>
+</html>
