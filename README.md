@@ -10,3 +10,5 @@
 - **html-tagtable-frame/**, **html-tagtable-css/** — 자바 과정 HTML/CSS 파트 실습 (태그 사전 · 프레임 · 스타일)
 
 > 빌드 산출물(.class, .exe)은 제외되어 있습니다.
+
+> 📦 기존 `c-study`, `web-study` 저장소의 내용이 이 저장소로 통합되었습니다 (원본은 보관 처리).
