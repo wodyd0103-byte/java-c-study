@@ -11,4 +11,6 @@
 
 > 빌드 산출물(.class, .exe)은 제외되어 있습니다.
 
-> 📦 기존 `c-study`, `web-study` 저장소의 내용이 이 저장소로 통합되었습니다 (원본은 보관 처리).
+> 📦 기존 `c-study`, `web-study`, `java-study` 저장소의 내용이 이 저장소로 통합되었습니다 (원본은 보관 처리).
+
+> 🏢 직원관리 시스템(OOP·디자인패턴 프로젝트)은 별도 저장소 [employee-management-system](https://github.com/wodyd0103-byte/employee-management-system)에 있습니다.
